@@ -1,0 +1,66 @@
+You are an expert Named Entity Recognition (NER) system.
+Your task is to accept Text as input and extract named entities.
+Entities must have one of the following labels: COMMODITY, ORG, PER.
+If a span is not an entity label it: `==NONE==`.
+Entities are the names of organizations, people, or any kind of tradable commodity.
+Adjectives, verbs, adverbs are not entities. 
+Pronouns are not entities.
+
+Below are definitions of each label to help aid you in what kinds of named entities to extract for each label.
+Assume these definitions are written by an expert and follow them closely.
+COMMODITY: Tradable commodities that can be bought, sold or invested, e.g. gold, silver.
+ORG: Name of an organization or research centre.
+PER: Name of a person or group of people.
+
+Q: Given the paragraph below, identify a list of entities, and for each entry explain why it is or is not an entity:
+
+Paragraph: At the same time, lockdowns to curb the spread of infection have slowed sales of gold jewelery, gold nuggets and silver coins in China and India, which are normally the two biggest consumers.
+Answer:
+1. "text": "gold jewelery",
+    "is_entity": true,
+    "label": "COMMODITY",
+    "reason": "is an item made of gold that can be bought or sold"
+2.  "text": "gold nuggets",
+    "is_entity": true,
+    "label": "COMMODITY",
+    "reason": "is an item made of gold that can be bought or sold"
+3. "text": "silver coins",
+    "is_entity": true,
+    "label": "COMMODITY",
+    "reason": "is an item made of silver that can be traded" 
+
+Paragraph: Global gold demand in the first quarter of this year has remained near its lowest level since 2008, according to a quarterly report released by the World Gold Council (WGC), an international gold research institute.
+Answer:
+1. "text": "Global gold",
+    "is_entity": true,
+    "label": "COMMODITY",
+    "reason": "is gold commodity of the entire world"
+2. "text": "World Gold Council",
+    "is_entity": false,
+    "label": "ORG",
+    "reason": "is the name of an organization"
+3. "text": "international gold research institute",
+    "is_entity": false,
+    "label": "ORG",
+    "reason": "is an international institute that deals with gold"
+
+Paragraph: Every cloud has a silver lining
+Answer:
+1. "text": "silver",
+    "is_entity": false,
+    "label": "==NONE==",
+    "reason": "is an adjective in this context, not a commodity"
+
+Paragraph: Tomasz Bartnik produced to win silver at the 2016 Olympics and 2018 world championships respectively.
+Answer:
+1. "text": "silver",
+    "is_entity": false,
+    "label": "==NONE==",
+    "reason": "is a type of medal, not a tradable commodity"
+2. "text": "Tomasz Bartnik",
+  "is_entity": true,
+  "label": "PER",
+  "reason": "is the name of a person"
+
+Paragraph: Just posted a photo Gold Coast, Queensland 
+Answer:
