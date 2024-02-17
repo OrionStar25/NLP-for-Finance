@@ -1,18 +1,58 @@
-- text: Jack and Jill went up the hill.
+- text: Every post and comment you have ever made was related to persuading people to buy silver.
   spans:
-    - text: Jack
-      is_entity: true
-      label: PERSON
-      reason: is the name of a person
-    - text: Jill
-      is_entity: true
-      label: PERSON
-      reason: is the name of a person
-    - text: went up
+    - text: post
       is_entity: false
       label: ==NONE==
-      reason: is a verb
-    - text: hill
+      reason: is not a tradable commodity
+    - text: comment
+      is_entity: false
+      label: ==NONE==
+      reason: is not a tradable commodity
+    - text: silver
       is_entity: true
-      label: LOCATION
-      reason: is a location
+      label: SILVER
+      reason: is a tradable commodity made of silver
+- text: Lockdowns to curb the spread of infection have slowed sales of gold jewelery, silver coins, and copper bangles in China and India.
+  spans:
+    - text: gold jewelery
+      is_entity: true
+      label: GOLD
+      reason: is a tradable commodity made of gold
+    - text: copper bangles
+      is_entity: false
+      label: ==NONE==
+      reason: is a tradable commodity made of copper, not gold or silver
+    - text: silver coins
+      is_entity: true
+      label: SILVER
+      reason: is a tradable commodity made of silver
+    - text: China
+      is_entity: false
+      label: ==NONE==
+      reason: is not a tradable commodity
+- text: Global gold demand in the first quarter of this year has remained near its lowest level since 2008, according to a quarterly report released by the World Gold Council (WGC), an international gold research institute.
+  spans:
+    - text: Global gold demand
+      is_entity: true
+      label: GOLD
+      reason: is the entire world's demand for gold as a tradable commodity
+    - text: World Gold Council
+      is_entity: false
+      label: ==NONE==
+      reason: is name of an organization, not a tradable commodity 
+    - text: international gold research institute
+      is_entity: false
+      label: ==NONE==
+      reason: is a type of research institute, not a tradable commodity 
+- text: New block opened at Silverwater Correction Centre.
+  spans:
+    - text: Silverwater Correction Centre
+      is_entity: false
+      label: ==NONE==
+      reason: is name of an organization, not a tradable commodity
+- text: Sampson registered a score of 462 points to claim gold in the three positions event.
+  spans:
+    - text: gold
+      is_entity: false
+      label: ==NONE==
+      reason: is a type of medal received, not a tradable commodity
